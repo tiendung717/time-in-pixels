@@ -1,4 +1,4 @@
-rootProject.name = "App Template"
+rootProject.name = "Time in pixels"
 include ':app'
 include ':base:theme'
 include ':base:common'
@@ -12,3 +12,4 @@ include ':feature:iau'
 include ':feature:iar'
 include ':feature:amz-purchase'
 include ':base:remoteconfig'
+include ':data'

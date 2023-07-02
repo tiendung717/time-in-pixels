@@ -2,7 +2,7 @@
 
 
 object Build {
-    const val applicationId = "com.solid.app"
+    const val applicationId = "com.solid.timeinpixels"
     const val admobAppId = "ca-app-pub-3940256099942544~3347511713"
     const val versionMajor = 0
     const val versionMinor = 0

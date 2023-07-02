@@ -63,20 +63,6 @@ android {
         }
     }
 
-    flavorDimensions.add("app")
-
-    productFlavors {
-        create("prod") {
-            dimension = "app"
-            applicationIdSuffix = ".prod"
-        }
-
-        create("qa") {
-            dimension = "app"
-            applicationIdSuffix = ".qa"
-        }
-    }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8

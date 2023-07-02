@@ -19,7 +19,7 @@ object AndroidX : Dependency() {
     private const val inAppUpdate = "com.google.android.play:app-update-ktx:2.0.1"
     private const val inAppReview = "com.google.android.play:review-ktx:2.0.1"
     private const val splashScreen = "androidx.core:core-splashscreen:1.0.0-beta02"
-
+    private const val datetime = "org.threeten:threetenbp:1.6.8"
 
     override fun implementations() = listOf<String>(
         coreKtx,
@@ -29,6 +29,7 @@ object AndroidX : Dependency() {
         inAppUpdate,
         inAppReview,
         splashScreen,
-        workManager
+        workManager,
+        datetime
     )
 }

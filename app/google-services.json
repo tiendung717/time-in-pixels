@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "143157023796",
+    "project_id": "time-in-pixels",
+    "storage_bucket": "time-in-pixels.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:143157023796:android:850c8082dbf3ed387da661",
+        "android_client_info": {
+          "package_name": "com.solid.timeinpixels"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "143157023796-6tacf7aughn7d9urp7ni42fluoc6qgmd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5dDkhBqh1k2XwzYExqLDCVyHZ00L9HeE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "143157023796-6tacf7aughn7d9urp7ni42fluoc6qgmd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
