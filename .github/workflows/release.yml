@@ -1,0 +1,26 @@
+name: "Release to Google Play Store"
+on:
+  push:
+    branches: [ main ]
+jobs:
+  changelog:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: "Check out repository code"
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.ACTION_TOKEN }}
+      - name: "Build Production release"
+        run: ./gradlew app:bundleProdRelease
+
+      - name: "Upload Android Release to Play Store"
+        uses: r0adkll/upload-google-play@v1.0.19
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
+          packageName: com.solid.teleprompter
+          releaseFiles: app/build/outputs/bundle/prodRelease/app-prod-release.aab
+          track: beta
+          status: completed
+          whatsNewDirectory: distribution/whatsnew
+          mappingFile: app/build/outputs/mapping/prodRelease/mapping.txt
+

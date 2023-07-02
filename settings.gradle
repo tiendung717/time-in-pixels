@@ -1,0 +1,14 @@
+rootProject.name = "App Template"
+include ':app'
+include ':base:theme'
+include ':base:common'
+include ':base:persistence'
+include ':base:ui'
+include ':base:navigation'
+include ':feature:ads'
+include ':feature:purchase'
+
+include ':feature:iau'
+include ':feature:iar'
+include ':feature:amz-purchase'
+include ':base:remoteconfig'

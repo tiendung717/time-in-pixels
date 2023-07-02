@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="Embedded JDK" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/base" />
+            <option value="$PROJECT_DIR$/base/common" />
+            <option value="$PROJECT_DIR$/base/navigation" />
+            <option value="$PROJECT_DIR$/base/persistence" />
+            <option value="$PROJECT_DIR$/base/remoteconfig" />
+            <option value="$PROJECT_DIR$/base/theme" />
+            <option value="$PROJECT_DIR$/base/ui" />
+            <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/ads" />
+            <option value="$PROJECT_DIR$/feature/amz-purchase" />
+            <option value="$PROJECT_DIR$/feature/iar" />
+            <option value="$PROJECT_DIR$/feature/iau" />
+            <option value="$PROJECT_DIR$/feature/purchase" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
