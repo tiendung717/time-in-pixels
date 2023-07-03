@@ -19,6 +19,12 @@ import javax.inject.Inject
 @HiltViewModel
 class PixelViewModel @Inject constructor(private val repo: Repo) : ViewModel() {
 
+    fun createMockData(year: Year) {
+        viewModelScope.launch {
+            repo.createMockData(year)
+        }
+    }
+
     fun getAllPixels() = repo.getAllPixels()
 
     fun getPixelsByYear(year: Year): Flow<List<Pixel>> {

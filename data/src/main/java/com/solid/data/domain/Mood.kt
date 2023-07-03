@@ -1,10 +1,11 @@
 package com.solid.data.domain
 
 import androidx.annotation.StringRes
+import androidx.compose.ui.graphics.Color
 import com.solid.data.R
 import java.lang.IllegalArgumentException
 
-open class Mood(val value: Int, @StringRes val name: Int) {
+open class Mood(val value: Int, @StringRes val name: Int, val color: Color) {
     companion object {
         fun fromValue(value: Int) : Mood {
             return when (value) {
@@ -14,6 +15,6 @@ open class Mood(val value: Int, @StringRes val name: Int) {
             }
         }
     }
-    object Negative: Mood(0, R.string.mood_negative)
-    object Positive: Mood(1, R.string.mood_positive)
+    object Negative: Mood(0, R.string.mood_negative, Color.Yellow)
+    object Positive: Mood(1, R.string.mood_positive, Color.Green)
 }

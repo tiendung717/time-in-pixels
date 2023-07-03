@@ -27,4 +27,8 @@ class PixelMapper @Inject constructor() {
             note = pixel.note
         )
     }
+
+    fun fromDomains(pixels: List<Pixel>) : List<EntityPixel> {
+        return pixels.map { fromDomain(it) }
+    }
 }

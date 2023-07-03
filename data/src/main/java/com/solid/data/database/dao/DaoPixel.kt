@@ -22,6 +22,9 @@ abstract class DaoPixel {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract suspend fun save(entityPixel: EntityPixel)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    abstract suspend fun save(entityPixels: List<EntityPixel>)
+
     @Update
     abstract suspend fun update(entityPixel: EntityPixel)
 

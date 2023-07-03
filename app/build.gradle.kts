@@ -98,6 +98,7 @@ dependencies {
     implementation(project(":base:ui"))
     implementation(project(":base:persistence"))
     implementation(project(":base:navigation"))
+    implementation(project(":data"))
 
     // Standard dependencies
     dependOn(

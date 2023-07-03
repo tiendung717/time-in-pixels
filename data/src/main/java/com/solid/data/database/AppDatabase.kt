@@ -28,7 +28,7 @@ abstract class AppDatabase : RoomDatabase() {
             return Room.databaseBuilder(
                 context,
                 AppDatabase::class.java,
-                "pixel.db"
+                "pixel1.db"
             )
                 .fallbackToDestructiveMigration()
                 .build()

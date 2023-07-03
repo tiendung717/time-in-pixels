@@ -2,13 +2,16 @@ package com.solid.data.repo
 
 import com.solid.common.network.safeApiCall
 import com.solid.data.database.AppDatabase
+import com.solid.data.domain.Mood
 import com.solid.data.domain.Pixel
 import com.solid.data.mapper.PixelMapper
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import org.threeten.bp.LocalDate
+import org.threeten.bp.Year
 import javax.inject.Inject
 import javax.inject.Singleton
+
 
 @Singleton
 class Repo @Inject constructor(
@@ -16,7 +19,27 @@ class Repo @Inject constructor(
     private val pixelMapper: PixelMapper
 ) {
 
-    fun getAllPixels() : Flow<List<Pixel>> {
+    suspend fun createMockData(year: Year) = safeApiCall {
+        val pixels = mutableListOf<Pixel>()
+        val startDate = year.atDay(1)
+        val endDate = year.atDay(year.length())
+
+        var date: LocalDate = startDate
+        while (date.isBefore(endDate) || date.isEqual(endDate)) {
+            pixels.add(
+                Pixel(
+                    date = date,
+                    note = "$date",
+                    mood = listOf(Mood.Positive, Mood.Negative).random()
+                )
+            )
+            date = date.plusDays(1)
+        }
+
+        db.daoPixel().save(pixelMapper.fromDomains(pixels))
+    }
+
+    fun getAllPixels(): Flow<List<Pixel>> {
         return db.daoPixel().getAll().map {
             pixelMapper.fromEntities(it)
         }
