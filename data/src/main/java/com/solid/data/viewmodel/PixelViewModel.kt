@@ -7,6 +7,7 @@ import com.solid.data.domain.Pixel
 import com.solid.data.repo.Repo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import org.threeten.bp.LocalDate
 import org.threeten.bp.Month
@@ -27,11 +28,11 @@ class PixelViewModel @Inject constructor(private val repo: Repo) : ViewModel() {
 
     fun getAllPixels() = repo.getAllPixels()
 
-    fun getPixelsByYear(year: Year): Flow<List<Pixel>> {
+    fun getPixelsByYear(year: Year): Flow<Map<LocalDate, Pixel>> {
         return repo.getPixels(
             startDate = year.atDay(1),
             endDate = year.atDay(year.length())
-        )
+        ).map { it.associateBy { it.date } }
     }
 
     fun getPixelsByMonth(month: YearMonth): Flow<List<Pixel>> {

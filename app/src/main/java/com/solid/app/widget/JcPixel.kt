@@ -1,19 +1,47 @@
 package com.solid.app.widget
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import com.solid.data.domain.Pixel
 
 @Composable
-fun JcPixel(modifier: Modifier, pixel: Pixel) {
-    Box(modifier = modifier.background(color = pixel.mood.color))
+fun JcPixelTile(pixel: Pixel?) {
+    if (pixel == null) {
+        JcEmptyPixel()
+    } else {
+        JcPixel(pixel = pixel)
+    }
 }
 
 @Composable
-fun JcEmptyPixel(modifier: Modifier, color: Color) {
-    Box(modifier = modifier.background(color = color))
+fun JcPixel(pixel: Pixel) {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .aspectRatio(1f)
+            .background(
+                color = pixel.mood.color,
+                shape = RoundedCornerShape(2.dp)
+            )
+    )
+}
+
+@Composable
+fun JcEmptyPixel() {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .aspectRatio(1f)
+            .background(
+                color = Color.Gray,
+                shape = RoundedCornerShape(2.dp)
+            )
+    )
 }
