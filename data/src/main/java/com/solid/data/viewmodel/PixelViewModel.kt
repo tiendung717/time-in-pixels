@@ -35,11 +35,11 @@ class PixelViewModel @Inject constructor(private val repo: Repo) : ViewModel() {
         ).map { it.associateBy { it.date } }
     }
 
-    fun getPixelsByMonth(month: YearMonth): Flow<List<Pixel>> {
+    fun getPixelsByMonth(month: YearMonth): Flow<Map<LocalDate, Pixel>> {
         return repo.getPixels(
             startDate = month.atDay(1),
             endDate = month.atEndOfMonth()
-        )
+        ).map { it.associateBy { it.date } }
     }
 
     fun savePixel(date: LocalDate, note: String, mood: Mood) {

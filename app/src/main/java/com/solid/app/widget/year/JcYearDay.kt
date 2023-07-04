@@ -1,4 +1,4 @@
-package com.solid.app.widget
+package com.solid.app.widget.year
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -12,16 +12,16 @@ import androidx.compose.ui.unit.dp
 import com.solid.data.domain.Pixel
 
 @Composable
-fun JcPixelTile(pixel: Pixel?) {
+fun JcYearDayTile(pixel: Pixel?) {
     if (pixel == null) {
-        JcEmptyPixel()
+        JcYearDayEmpty()
     } else {
-        JcPixel(pixel = pixel)
+        JcYearDay(pixel = pixel)
     }
 }
 
 @Composable
-fun JcPixel(pixel: Pixel) {
+private fun JcYearDay(pixel: Pixel) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -34,7 +34,7 @@ fun JcPixel(pixel: Pixel) {
 }
 
 @Composable
-fun JcEmptyPixel() {
+fun JcYearDayEmpty() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
