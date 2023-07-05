@@ -16,7 +16,7 @@ class ThemeModule {
 
     @Singleton
     @Provides
-    fun provideFont() = googleFontFamily("Sacramento")
+    fun provideFont() = googleFontFamily("Poppins")
 
     @Singleton
     @Provides

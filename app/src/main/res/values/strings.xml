@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Template</string>
+    <string name="app_name">Y.I.P.X</string>
+    <string name="bottom_today">Today</string>
+    <string name="bottom_month">Month</string>
+    <string name="bottom_year">Year</string>
+    <string name="bottom_stats">Stats</string>
+    <string name="bottom_settings">Settings</string>
 </resources>

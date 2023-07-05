@@ -17,7 +17,7 @@ import org.threeten.bp.YearMonth
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ScreenHome() {
+fun ScreenToday() {
     Scaffold(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier
